@@ -1,15 +1,17 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+![](./base-img/how-to-build-a-todo-list-app-with-react-hooks-and-typescript.webp)
 
-> Description the project.
+# Todo-app
+
+> A simple todo list app for implementing simple functionalities such as adding a task, editing the task, marking a task completed and clearing tasks one after another and also clearing all competed tasks.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML, CSS, JavaScript
+- TailwindCSS, Webpack
+- Git, GitHub
 
 ## Live Demo (if available)
 
@@ -18,21 +20,24 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**This project is built on plain javascript technology, bundled with webpack and styled using tailwindcss utility classes. Follow as described:**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Command line interface(Windows powershell, linux terminal or the bash ) access
+- Git installed on your local machine
+- An IDE, (VsCode, Atom, notepadd++ etc)
+- A modern day Web Browser(Chrome, Edge, Firefox or Safari)
+- Internet connectivity
+
 ### Setup
 
-### Install
+**please refer to the link below to set up linters for this project**
 
-### Usage
-
-### Run tests
+[Linters set-up](https://github.com/microverseinc/linters-config/blob/master/README.md)
 
 ### Deployment
 
@@ -40,17 +45,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Onate Makoji David**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@aceDavon](https://github.com/aceDavon)
+- Twitter: [@sharkleshevon](https://twitter.com/sharkleshevon)
+- LinkedIn: [David Makoji](https://www.linkedin.com/in/david-makoji-b6090971/)
 
 ## 🤝 Contributing
 
@@ -70,6 +69,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
