@@ -1,6 +1,6 @@
 function Appendage(el, child, others) {
   const [styles, tasks, kebab] = others;
-  const { completed, description, id } = tasks;
+  const { description } = tasks;
   const DomEntry = document.getElementById('entry');
   const childElement = document.createElement(child);
   const box = document.createElement('input');
@@ -15,8 +15,6 @@ function Appendage(el, child, others) {
 
   el.appendChild(childElement);
   DomEntry.appendChild(el);
-
-  return;
 }
 
 export default Appendage;
