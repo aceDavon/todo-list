@@ -1,6 +1,6 @@
 import './index.css';
-import Appendage  from './common/appendage';
-import kebab from './img/kebab.svg'
+import Appendage from './common/appendage.js';
+import kebab from './img/kebab.svg';
 
 function component() {
   const data = [
@@ -32,7 +32,7 @@ function component() {
     const others = [styles, tasks, kebab];
     return Appendage(parent, child, others);
   });
-  parent.appendChild(footer)
+  parent.appendChild(footer);
 }
 
 component();
