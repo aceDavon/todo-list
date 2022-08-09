@@ -1,14 +1,10 @@
 import './index.css';
 import Appendage from './common/appendage.js';
 import kebab from './img/kebab.svg';
+import { Data as data } from './data/tasks.js'
 
 function component() {
-  const data = [
-    { completed: false, description: 'Refactor code to ES6 modules', id: 1 },
-    { completed: false, description: 'Refactor code to ES6 modules', id: 1 },
-    { completed: false, description: 'Refactor code to ES6 modules', id: 1 },
-    { completed: false, description: 'Refactor code to ES6 modules', id: 1 },
-  ];
+ 
   const parent = document.createElement('ul');
   const inputField = document.createElement('input');
   const child = 'li';
