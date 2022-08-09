@@ -5,4 +5,4 @@ const Data = [
   { completed: false, description: 'Request a review', id: 4 },
 ];
 
-export default Data
+export default Data;
