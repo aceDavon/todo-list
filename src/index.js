@@ -1,10 +1,9 @@
 import './index.css';
 import Appendage from './common/appendage.js';
 import kebab from './img/kebab.svg';
-import { Data as data } from './data/tasks.js'
+import Data from './data/tasks.js';
 
 function component() {
- 
   const parent = document.createElement('ul');
   const inputField = document.createElement('input');
   const child = 'li';
@@ -24,7 +23,7 @@ function component() {
   parent.appendChild(header);
   parent.appendChild(inputField);
 
-  data.map((tasks) => {
+  Data.map((tasks) => {
     const others = [styles, tasks, kebab];
     return Appendage(parent, child, others);
   });
