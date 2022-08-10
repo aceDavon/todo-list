@@ -1,10 +1,12 @@
+import ElementCreator from './ElementCreator';
+
 function Appendage(el, child, others) {
   const [styles, tasks, kebab] = others;
   const { description } = tasks;
   const DomEntry = document.getElementById('entry');
-  const childElement = document.createElement(child);
-  const box = document.createElement('input');
-  const img = document.createElement('img');
+  const childElement = ElementCreator(child);
+  const box = ElementCreator('input');
+  const img = ElementCreator('img');
   img.setAttribute('src', kebab);
   box.type = 'checkbox';
   box.setAttribute('class', 'complete');
