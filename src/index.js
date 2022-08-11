@@ -1,12 +1,14 @@
 import './index.css';
-import Appendage from './common/appendage.js';
 import kebab from './img/kebab.svg';
-import Data from './data/tasks.js';
-import ElementCreator, { NewTextNode } from './common/ElementCreator';
+import Return from './img/return.svg';
+import ElementCreator, { NewTextNode } from './Controller/ElementCreator.js';
+import { Create, Read } from './Controller/controller.js';
 
 function component() {
   const parent = ElementCreator('ul');
+  const container = ElementCreator('div');
   const inputField = ElementCreator('input');
+  const returnIcon = ElementCreator('img');
   const child = 'li';
   const styles = 'list-item';
   const header = ElementCreator('span');
@@ -21,14 +23,18 @@ function component() {
   inputField.setAttribute('type', 'text');
   inputField.id = 'addNew';
   inputField.placeholder = 'Add to your list';
+  returnIcon.src = Return;
+  returnIcon.id = 'submit';
+  container.appendChild(returnIcon);
+  container.appendChild(inputField);
+  container.setAttribute('class', 'input-content');
   parent.appendChild(header);
-  parent.appendChild(inputField);
-
-  Data.map((tasks) => {
-    const others = [styles, tasks, kebab];
-    return Appendage(parent, child, others);
+  parent.appendChild(container);
+  Read({
+    styles, kebab, parent, child,
   });
   parent.appendChild(footer);
+  Create();
 }
 
 component();

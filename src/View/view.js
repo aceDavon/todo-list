@@ -1,6 +1,5 @@
-import { Edit, Remove } from '../Actions/actions';
-import { Update } from '../Controller/controller';
-import ElementCreator from '../Controller/ElementCreator';
+import { Edit, Remove } from '../Actions/actions.js';
+import ElementCreator from '../Controller/ElementCreator.js';
 
 function Appendage(el, child, others) {
   const [styles, tasks, kebab] = others;
@@ -15,7 +14,7 @@ function Appendage(el, child, others) {
   box.type = 'checkbox';
   edit.type = 'text';
   box.setAttribute('class', 'complete');
-  box.addEventListener('change', (e) => Remove(e, id))
+  box.addEventListener('change', (e) => Remove(e, id));
   edit.setAttribute('class', 'hidden');
   childElement.classList.add(styles);
   childElement.innerText = description;
