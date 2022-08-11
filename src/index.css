@@ -19,12 +19,15 @@ html {
   height: 100vh;
   bottom: 0;
   top: 0;
+  background-image: url('./img/bg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 span {
   font-size: larger;
   font-weight: 400;
-  padding: 8px 0;
+  padding: 8px 4px;
 }
 
 .input-content {
@@ -42,12 +45,13 @@ span {
   position: relative;
   width: 45%;
   margin: 45px auto;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.318);
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.318);
   list-style-type: none;
   display: flex;
   flex-direction: column;
   gap: 5px;
   border-radius: 8px;
+  background-color: whitesmoke;
 }
 
 .list > * {
@@ -137,6 +141,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
+  border-radius: 0  0 8px 8px;
 }
 
 #clear {
@@ -144,4 +149,10 @@ footer {
   background-color: inherit;
   cursor: pointer;
   text-transform: capitalize;
+}
+
+@media screen and (max-width: 765px) {
+  .list {
+    width: 85%;
+  }
 }
