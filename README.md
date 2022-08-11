@@ -6,7 +6,6 @@
 
 > This is an Educational repository, for learning how to install and implement the Webpack, Webpack-CLI and the Webpack-dev-server for a project. This project is written in Javascript with minimal npm scripts and commands. It is a minimal implementation of a To Do list application
 
-
 ## Built With
 
 - HTML, CSS, JavaScript
@@ -21,19 +20,16 @@ To get a local copy up and running follow these simple example steps.
 1. Clone the Repo or Download the Zip file
 2. Run the live server or simply open index.html with your browser.
 
-## Project Mockup 
-- All views 
-![](./src/img/3-devices-black.png)
+## Project Mockup
 
-- Desktop 
-![](./src/img/desktop%20(1).png)
+- All views
+  ![](./src/img/3-devices-black.png)
 
--Tablet 
-![](./src/img/tab.png)
+- Desktop
+  ![](<./src/img/desktop%20(1).png>)
 
--Mobile 
-![](./src/img/phone.png)
-
+- Mobile
+  ![](./src/img/mobile-black.png)
 
 ## Authors
 
@@ -62,4 +58,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
-
