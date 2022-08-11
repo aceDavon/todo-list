@@ -27,6 +27,17 @@ span {
   padding: 8px 0;
 }
 
+.input-content {
+  position: relative;
+}
+
+.input-content img {
+  width: 25px;
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+}
+
 .list {
   position: relative;
   width: 45%;
@@ -61,6 +72,49 @@ span {
   cursor: move;
 }
 
+.hang {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.empty {
+  text-align: center;
+}
+
+.empty img,
+.empty > input {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.empty.hide {
+  visibility: hidden;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0.5px;
+}
+
+.hidden:focus {
+  outline: 1px solid #dedede;
+  background-color: antiquewhite;
+}
+
+.hidden.show {
+  visibility: visible;
+  width: 95%;
+  margin: auto;
+  border: 1px solid black;
+  padding: 12px 3px;
+}
+
 #addNew {
   width: 100%;
   margin: 4px auto;
@@ -68,6 +122,12 @@ span {
   border: none;
   border-bottom: 1px solid #dedede;
   font-style: italic;
+}
+
+#addNew:focus {
+  outline: 1px solid #dedede;
+  width: 98%;
+  margin: auto;
 }
 
 footer {

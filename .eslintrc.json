@@ -14,13 +14,17 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "import/extensions": [ 1, {
-      "js": "always", "json": "always"
-    }]
+    "import/extensions": [
+      1,
+      {
+        "js": "always",
+        "json": "always"
+      }
+    ],
+    "import/no-cycle": "off",
+    "no-plusplus": "off",
+    "eqeqeq": "off",
+    "array-callback-return": "off"
   },
-  "ignorePatterns": [
-    "dist/",
-    "build/",
-    "webpack.config.js"
-  ]
+  "ignorePatterns": ["dist/", "build/", "webpack.config.js"]
 }
