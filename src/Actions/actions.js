@@ -20,6 +20,19 @@ export const resetId = () => {
   });
 };
 
+const Complete = (id) => {
+  const local = JSON.parse(localStorage.getItem('todo'));
+
+  local.forEach((item) => {
+    if (item.id == id) {
+      if (!item.completed) {
+        item.completed = !item.completed;
+      }
+    }
+    localStorage.setItem('todo', JSON.stringify(local));
+  });
+};
+
 export const Remove = (e, id) => {
   const local = JSON.parse(localStorage.getItem('todo'));
   const btn = document.getElementById('clear');
@@ -35,19 +48,5 @@ export const Remove = (e, id) => {
     localStorage.removeItem('todo');
     window.location.reload();
   }
-  Complete(id)
+  Complete(id);
 };
-
-const Complete = (id) => {
-const local = JSON.parse(localStorage.getItem('todo'));
-const arr = []
-  local.forEach(item => {
-    if(item.id == id) {
-      if(!item.completed){
-        item.completed = !item.completed
-      }
-    }
-      localStorage.setItem('todo', JSON.stringify(local))
-      console.log(local);
-  })
-}
