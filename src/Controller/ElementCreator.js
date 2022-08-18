@@ -1,2 +1,3 @@
-export const NewTextNode = (el) => document.createTextNode(el);
+const NewTextNode = (el) => document.createTextNode(el);
 
+export default NewTextNode;

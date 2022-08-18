@@ -1,7 +1,7 @@
 import './index.css';
 import kebab from './img/kebab.svg';
 import Return from './img/return.svg';
-import { NewTextNode } from './Controller/ElementCreator.js';
+import NewTextNode from './Controller/ElementCreator.js';
 import { Create, Read } from './Controller/controller.js';
 
 function component() {

@@ -1,7 +1,6 @@
 /** * @jest-environment jsdom */
 import { Create, Delete, local } from './src/Controller/controller';
 
-// eslint-disable-next-line func-names
 const localStorageMock = (function () {
   let store = {};
 
