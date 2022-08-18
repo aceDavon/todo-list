@@ -1,5 +1,3 @@
-const ElementCreator = (type) => document.createElement(type);
+const NewTextNode = (el) => document.createTextNode(el);
 
-export const NewTextNode = (el) => document.createTextNode(el);
-
-export default ElementCreator;
+export default NewTextNode;

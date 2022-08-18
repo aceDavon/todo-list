@@ -26,5 +26,5 @@
     "eqeqeq": "off",
     "array-callback-return": "off"
   },
-  "ignorePatterns": ["dist/", "build/", "webpack.config.js"]
+  "ignorePatterns": ["dist/", "build/", "webpack.config.js", "__setups__"]
 }

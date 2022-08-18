@@ -6,6 +6,9 @@
 
 > This is an Educational repository, for learning how to install and implement the Webpack, Webpack-CLI and the Webpack-dev-server for a project. This project is written in Javascript with minimal npm scripts and commands. It is a minimal implementation of a To Do list application
 
+## Live URL
+[Deployment](https://acedavon.github.io/todo-list/)
+
 ## Built With
 
 - HTML, CSS, JavaScript

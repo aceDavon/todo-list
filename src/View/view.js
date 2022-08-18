@@ -1,31 +1,27 @@
 import { Edit, Remove } from '../Actions/actions.js';
-import ElementCreator from '../Controller/ElementCreator.js';
 
-function Appendage(el, child, others) {
-  const [styles, tasks, kebab] = others;
-  const { description, id } = tasks;
-  const DomEntry = document.getElementById('entry');
-  const childElement = ElementCreator(child);
+function Appendage(kebab, id, description) {
+  const childElement = document.createElement('li');
+  const parent = document.getElementById('lists');
 
-  const box = ElementCreator('input');
-  const edit = ElementCreator('input');
-  const img = ElementCreator('img');
+  const box = document.createElement('input');
+  const edit = document.createElement('input');
+  const img = document.createElement('img');
   img.setAttribute('src', kebab);
   box.type = 'checkbox';
   edit.type = 'text';
   box.setAttribute('class', 'complete');
   box.addEventListener('change', (e) => Remove(e, id));
   edit.setAttribute('class', 'hidden');
-  childElement.classList.add(styles);
+  childElement.classList.add('list-item');
   childElement.innerText = description;
   childElement.id = id;
   img.onclick = (e) => Edit(e);
   childElement.appendChild(box);
   childElement.appendChild(img);
 
-  el.appendChild(childElement);
-  el.appendChild(edit);
-  DomEntry.appendChild(el);
+  parent.appendChild(childElement);
+  parent.appendChild(edit);
 }
 
 export default Appendage;
