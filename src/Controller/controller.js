@@ -1,61 +1,31 @@
 import Appendage from '../View/view.js';
 
-const local = JSON.parse(localStorage.getItem('todo'));
-
-const InitialState = ({ styles, parent, child }) => {
-  const tasks = { description: 'Please add a task to your list' };
-  const others = [styles, tasks];
-  return Appendage(parent, child, others);
-};
+const local = () => JSON.parse(localStorage.getItem('todo'));
 
 const saveLocal = (data) => {
-  const local = JSON.parse(localStorage.getItem('todo'));
-
-  if (local === null) {
-    localStorage.setItem('todo', JSON.stringify(data));
-  } else {
-    data.map((x, i) => {
-      x.id = i + 1;
-      local.push(x);
-    });
-    localStorage.setItem('todo', JSON.stringify(data));
-    document.location.reload();
-  }
+  localStorage.setItem('todo', JSON.stringify(data));
 };
 
-const Create = () => {
-  const inputValue = document.getElementById('addNew');
-  const btn = document.getElementById('submit');
-  let arr = JSON.parse(localStorage.getItem('todo'));
+const Create = (inputValue) => {
+  const arr = JSON.parse(localStorage.getItem('todo')) || [];
+  const obj = {};
 
-  btn.addEventListener('click', () => {
-    const obj = {};
+  obj.completed = false;
+  obj.description = inputValue;
+  obj.id = arr.length + 1;
+  arr.push(obj);
 
-    obj.completed = false;
-    obj.description = inputValue.value;
-    obj.id = arr !== null && arr.length + 1;
-    if (arr !== null) {
-      arr.push(obj);
-    } else {
-      arr = [obj];
-    }
-    saveLocal(arr);
-    window.location.reload();
-  });
+  saveLocal(arr);
+  window.location.reload();
 };
 
-const Read = ({
-  styles, kebab, parent, child,
-}) => {
-  if (local) {
-    for (let i = 0; i <= local.length - 1; i++) {
-      const tasks = local[i];
-      const others = [styles, tasks, kebab];
-      Appendage(parent, child, others);
+const Read = (kebab) => {
+  if (local()) {
+    const tasks = local();
+    for (let i = 0; i <= tasks.length - 1; i++) {
+      const { id, description } = tasks[i];
+      Appendage(kebab, id, description);
     }
-  } else {
-    styles = 'empty';
-    InitialState({ styles, parent, child });
   }
 };
 
@@ -93,5 +63,5 @@ const Delete = (id) => {
 };
 
 export {
-  Create, Read, Update, Delete, InitialState,
+  Create, Read, Update, Delete, local,
 };

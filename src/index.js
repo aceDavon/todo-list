@@ -1,19 +1,18 @@
 import './index.css';
 import kebab from './img/kebab.svg';
 import Return from './img/return.svg';
-import ElementCreator, { NewTextNode } from './Controller/ElementCreator.js';
+import { NewTextNode } from './Controller/ElementCreator.js';
 import { Create, Read } from './Controller/controller.js';
 
 function component() {
-  const parent = ElementCreator('ul');
-  const container = ElementCreator('div');
-  const inputField = ElementCreator('input');
-  const returnIcon = ElementCreator('img');
-  const child = 'li';
-  const styles = 'list-item';
-  const header = ElementCreator('span');
-  const footer = ElementCreator('footer');
-  const btn = ElementCreator('button');
+  const entry = document.getElementById('entry');
+  const parent = document.getElementById('lists');
+  const container = document.createElement('div');
+  const inputField = document.createElement('input');
+  const returnIcon = document.createElement('img');
+  const header = document.createElement('span');
+  const footer = document.createElement('footer');
+  const btn = document.createElement('button');
   btn.id = 'clear';
   btn.innerText = 'clear all Complete';
   footer.appendChild(btn);
@@ -25,16 +24,17 @@ function component() {
   inputField.placeholder = 'Add to your list';
   returnIcon.src = Return;
   returnIcon.id = 'submit';
+  returnIcon.onclick = () => Create(inputField.value);
   container.appendChild(returnIcon);
   container.appendChild(inputField);
   container.setAttribute('class', 'input-content');
+
   parent.appendChild(header);
   parent.appendChild(container);
-  Read({
-    styles, kebab, parent, child,
-  });
+  Read(kebab);
   parent.appendChild(footer);
-  Create();
+  entry.appendChild(parent);
+  // Create();
 }
 
 component();
