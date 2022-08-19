@@ -1,5 +1,7 @@
 /** * @jest-environment jsdom */
-import { Create, Delete, local, Update } from './src/Controller/controller';
+import {
+  Create, Delete, local, Update,
+} from './src/Controller/controller';
 import { Complete } from './src/Actions/actions';
 
 const localStorageMock = (() => {
@@ -85,7 +87,6 @@ describe('Create and Read Data', () => {
 });
 
 test('DOM manipulation', () => {
-
   const expected = [
     {
       description: 'Edited',
@@ -93,6 +94,6 @@ test('DOM manipulation', () => {
       completed: false,
     },
   ];
-  Update(1, 'Edited')
-  expect(local()).toEqual(expected)
+  Update(1, 'Edited');
+  expect(local()).toEqual(expected);
 });

@@ -16,8 +16,8 @@ export const Edit = () => {
         target[i].classList.add('hide');
         const inputValue = document.getElementById('edit');
         inputValue.addEventListener('focusout', () => {
-          const value = inputValue.value;
-          Update(i +1, value)
+          const { value } = inputValue;
+          Update(i + 1, value);
           window.location.reload();
         });
       });

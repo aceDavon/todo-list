@@ -32,7 +32,7 @@ const Read = (kebab) => {
 
 const Update = (id, value) => {
   const newData = local().map((x) => {
-    if(x.id === id) return {...x, description: value}
+    if (x.id === id) return { ...x, description: value };
     return x;
   });
   localStorage.setItem('todo', JSON.stringify(newData));
@@ -45,7 +45,7 @@ const Delete = (id) => {
     if (item.id != id) {
       arr.push(item);
       localStorage.setItem('todo', JSON.stringify(arr));
-      resetId()
+      resetId();
     }
   });
 };

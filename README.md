@@ -29,7 +29,7 @@ To get a local copy up and running follow these simple example steps.
   ![](./src/img/3-devices-black.png)
 
 - Desktop
-  ![](<./src/img/desktop%20(1).png>)
+  ![](./src/img/desktop%20(1).png)
 
 - Mobile
   ![](./src/img/mobile-black.png)
@@ -41,6 +41,13 @@ To get a local copy up and running follow these simple example steps.
 - GitHub: [@aceDavon](https://github.com/acedavon)
 - Twitter: [@sharkleshevon](https://twitter.com/sharkleshevon)
 - LinkedIn: [Makoji david](https://linkedin.com/in/linkedinhandle)
+
+👤 **Elijah Odjegba**
+
+- GitHub: [@Elijahdre](https://github.com/Elijahdre)
+- Twitter: [@Kingglijah](https://twitter.com/kingglijah)
+- LinkedIn: [Elijah Odjegba](https://www.linkedin.com/in/elijah-odjegba-862708179/)
+
 
 ## 🤝 Contributing
 
