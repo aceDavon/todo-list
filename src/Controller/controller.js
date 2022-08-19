@@ -17,6 +17,19 @@ const Create = (inputValue) => {
   arr.push(obj);
 
   saveLocal(arr);
+  document.location.reload()
+};
+
+export const CreateTask = (inputValue) => {
+  const arr = JSON.parse(localStorage.getItem('todo')) || [];
+  const obj = {};
+
+  obj.completed = false;
+  obj.description = inputValue;
+  obj.id = arr.length + 1;
+  arr.push(obj);
+
+  saveLocal(arr);
 };
 
 const Read = (kebab) => {

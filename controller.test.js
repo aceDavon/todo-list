@@ -1,13 +1,9 @@
 /** * @jest-environment jsdom */
-// import {
-//   Create, Delete, local, Update,
-// } from './src/Controller/controller';
+import {
+  CreateTask, Delete, local, Update,
+} from './src/Controller/controller';
 
-const fns = require('./src/Controller/controller');
-
-const { Create, Delete, local, Update } = fns
-
-import { Complete } from './src/Actions/actions';
+import { ClearAllTask, Complete } from './src/Actions/actions';
 
 const localStorageMock = (() => {
   let store = {};
@@ -56,8 +52,8 @@ describe('Create and Read Data', () => {
       },
     ];
 
-    Create(mockTodo);
-    Create(mockTodo2);
+    CreateTask(mockTodo);
+    CreateTask(mockTodo2);
     expect(local()).toEqual(expected);
   });
 
@@ -102,3 +98,9 @@ test('DOM manipulation', () => {
   Update(1, 'Edited');
   expect(local()).toEqual(expected);
 });
+
+test('Clear Completed tasks', () => {
+  Complete(1)
+  ClearAllTask()
+  expect(local().length).toEqual(0)
+})

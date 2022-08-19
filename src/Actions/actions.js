@@ -1,4 +1,4 @@
-import { Delete, Update } from '../Controller/controller.js';
+import { Delete, local, Update } from '../Controller/controller.js';
 
 export const Edit = () => {
   const items = document.querySelectorAll('.list-item');
@@ -47,6 +47,21 @@ export const Complete = (id) => {
     }
     localStorage.setItem('todo', JSON.stringify(local));
   });
+};
+
+export const ClearAll = () => {
+  const data = local().filter(items => {
+    if(!items.completed) return items;
+  });
+  localStorage.setItem('todo', JSON.stringify(data));
+  document.location.reload()
+}
+
+export const ClearAllTask = () => {
+  const data = local().filter((items) => {
+    if (!items.completed) return items;
+  });
+  localStorage.setItem('todo', JSON.stringify(data));
 };
 
 export const Remove = (e, id) => {
