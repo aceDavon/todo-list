@@ -100,7 +100,7 @@ test('DOM manipulation', () => {
 });
 
 test('Clear Completed tasks', () => {
-  Complete(1)
-  ClearAllTask()
-  expect(local().length).toEqual(0)
-})
+  Complete(1);
+  ClearAllTask();
+  expect(local().length).toEqual(0);
+});

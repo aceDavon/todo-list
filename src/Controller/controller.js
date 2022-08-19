@@ -17,7 +17,7 @@ const Create = (inputValue) => {
   arr.push(obj);
 
   saveLocal(arr);
-  document.location.reload()
+  document.location.reload();
 };
 
 export const CreateTask = (inputValue) => {

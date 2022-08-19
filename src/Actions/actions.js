@@ -50,12 +50,12 @@ export const Complete = (id) => {
 };
 
 export const ClearAll = () => {
-  const data = local().filter(items => {
-    if(!items.completed) return items;
+  const data = local().filter((items) => {
+    if (!items.completed) return items;
   });
   localStorage.setItem('todo', JSON.stringify(data));
-  document.location.reload()
-}
+  document.location.reload();
+};
 
 export const ClearAllTask = () => {
   const data = local().filter((items) => {
