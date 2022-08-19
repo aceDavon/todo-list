@@ -1,7 +1,12 @@
 /** * @jest-environment jsdom */
-import {
-  Create, Delete, local, Update,
-} from './src/Controller/controller';
+// import {
+//   Create, Delete, local, Update,
+// } from './src/Controller/controller';
+
+const fns = require('./src/Controller/controller');
+
+const { Create, Delete, local, Update } = fns
+
 import { Complete } from './src/Actions/actions';
 
 const localStorageMock = (() => {

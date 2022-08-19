@@ -34,7 +34,6 @@ function component() {
   Read(kebab);
   parent.appendChild(footer);
   entry.appendChild(parent);
-  // Create();
 }
 
 component();

@@ -17,7 +17,6 @@ const Create = (inputValue) => {
   arr.push(obj);
 
   saveLocal(arr);
-  window.location.reload();
 };
 
 const Read = (kebab) => {
