@@ -3,6 +3,7 @@ import kebab from './img/kebab.svg';
 import Return from './img/return.svg';
 import NewTextNode from './Controller/ElementCreator.js';
 import { Create, Read } from './Controller/controller.js';
+import { ClearAll } from './Actions/actions';
 
 function component() {
   const entry = document.getElementById('entry');
@@ -15,6 +16,7 @@ function component() {
   const btn = document.createElement('button');
   btn.id = 'clear';
   btn.innerText = 'clear all Complete';
+  btn.onclick = () => ClearAll();
   footer.appendChild(btn);
   const txt = NewTextNode("Today's List");
   header.appendChild(txt);
@@ -34,7 +36,6 @@ function component() {
   Read(kebab);
   parent.appendChild(footer);
   entry.appendChild(parent);
-  // Create();
 }
 
 component();

@@ -1,7 +1,11 @@
 /** * @jest-environment jsdom */
-import { Create, Delete, local } from './src/Controller/controller';
+import {
+  CreateTask, Delete, local, Update,
+} from './src/Controller/controller';
 
-const localStorageMock = (function () {
+import { ClearAllTask, Complete } from './src/Actions/actions';
+
+const localStorageMock = (() => {
   let store = {};
 
   return {
@@ -25,7 +29,7 @@ const localStorageMock = (function () {
       return store;
     },
   };
-}());
+})();
 
 global.localStorage = localStorageMock;
 
@@ -48,20 +52,55 @@ describe('Create and Read Data', () => {
       },
     ];
 
-    Create(mockTodo);
-    Create(mockTodo2);
+    CreateTask(mockTodo);
+    CreateTask(mockTodo2);
     expect(local()).toEqual(expected);
   });
 
-  test('Data removed', () => {
+  test('Change task status', () => {
     const expected = [
+      {
+        description: 'json data',
+        id: 1,
+        completed: true,
+      },
       {
         description: 'jso data',
         id: 2,
         completed: false,
       },
     ];
+    Complete(1);
+    expect(local()).toStrictEqual(expected);
+  });
+
+  test('Data removed and IDs reset', () => {
+    const expected = [
+      {
+        description: 'jso data',
+        id: 1,
+        completed: false,
+      },
+    ];
     Delete(1);
     expect(local()).toStrictEqual(expected);
   });
+});
+
+test('DOM manipulation', () => {
+  const expected = [
+    {
+      description: 'Edited',
+      id: 1,
+      completed: false,
+    },
+  ];
+  Update(1, 'Edited');
+  expect(local()).toEqual(expected);
+});
+
+test('Clear Completed tasks', () => {
+  Complete(1);
+  ClearAllTask();
+  expect(local().length).toEqual(0);
 });
