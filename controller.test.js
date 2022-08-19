@@ -1,7 +1,8 @@
 /** * @jest-environment jsdom */
-import { Create, Delete, local } from './src/Controller/controller';
+import { Create, Delete, local, Update } from './src/Controller/controller';
+import { Complete } from './src/Actions/actions';
 
-const localStorageMock = (function () {
+const localStorageMock = (() => {
   let store = {};
 
   return {
@@ -25,7 +26,7 @@ const localStorageMock = (function () {
       return store;
     },
   };
-}());
+})();
 
 global.localStorage = localStorageMock;
 
@@ -53,15 +54,45 @@ describe('Create and Read Data', () => {
     expect(local()).toEqual(expected);
   });
 
-  test('Data removed', () => {
+  test('Change task status', () => {
     const expected = [
+      {
+        description: 'json data',
+        id: 1,
+        completed: true,
+      },
       {
         description: 'jso data',
         id: 2,
         completed: false,
       },
     ];
+    Complete(1);
+    expect(local()).toStrictEqual(expected);
+  });
+
+  test('Data removed and IDs reset', () => {
+    const expected = [
+      {
+        description: 'jso data',
+        id: 1,
+        completed: false,
+      },
+    ];
     Delete(1);
     expect(local()).toStrictEqual(expected);
   });
+});
+
+test('DOM manipulation', () => {
+
+  const expected = [
+    {
+      description: 'Edited',
+      id: 1,
+      completed: false,
+    },
+  ];
+  Update(1, 'Edited')
+  expect(local()).toEqual(expected)
 });

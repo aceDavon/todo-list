@@ -4,7 +4,23 @@ export const Edit = () => {
   const items = document.querySelectorAll('.list-item');
   items.forEach((el, i) => {
     el.addEventListener('click', () => {
-      Update(i);
+      const data = JSON.parse(localStorage.getItem('todo'));
+      const target = document.querySelectorAll('.list-item');
+      const input = document.querySelectorAll('.hidden');
+
+      data.map((x) => {
+        target[i].innerHTML = '';
+        input[i].classList.add('show');
+        input[i].value = x.description;
+        input[i].id = 'edit';
+        target[i].classList.add('hide');
+        const inputValue = document.getElementById('edit');
+        inputValue.addEventListener('focusout', () => {
+          const value = inputValue.value;
+          Update(i +1, value)
+          window.location.reload();
+        });
+      });
     });
   });
 };
@@ -20,7 +36,7 @@ export const resetId = () => {
   });
 };
 
-const Complete = (id) => {
+export const Complete = (id) => {
   const local = JSON.parse(localStorage.getItem('todo'));
 
   local.forEach((item) => {
@@ -41,7 +57,6 @@ export const Remove = (e, id) => {
     btn.addEventListener('click', () => {
       e.preventDefault();
       Delete(id);
-      resetId();
       window.location.reload();
     });
   } else {

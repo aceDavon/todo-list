@@ -1,3 +1,4 @@
+import { resetId } from '../Actions/actions.js';
 import Appendage from '../View/view.js';
 
 const local = () => JSON.parse(localStorage.getItem('todo'));
@@ -29,26 +30,12 @@ const Read = (kebab) => {
   }
 };
 
-const Update = (id) => {
-  const data = JSON.parse(localStorage.getItem('todo'));
-  const target = document.querySelectorAll('.list-item');
-  const input = document.querySelectorAll('.hidden');
-
-  data.map((x) => {
-    target[id].innerHTML = '';
-    input[id].classList.add('show');
-    input[id].value = x.description;
-    input[id].id = 'edit';
-    target[id].classList.add('hide');
-    const inputValue = document.getElementById('edit');
-    inputValue.addEventListener('focusout', () => {
-      const newData = data.map((x) => (x.id === id + 1
-        ? { ...x, description: inputValue.value }
-        : x));
-      localStorage.setItem('todo', JSON.stringify(newData));
-      window.location.reload();
-    });
+const Update = (id, value) => {
+  const newData = local().map((x) => {
+    if(x.id === id) return {...x, description: value}
+    return x;
   });
+  localStorage.setItem('todo', JSON.stringify(newData));
 };
 
 const Delete = (id) => {
@@ -58,6 +45,7 @@ const Delete = (id) => {
     if (item.id != id) {
       arr.push(item);
       localStorage.setItem('todo', JSON.stringify(arr));
+      resetId()
     }
   });
 };
